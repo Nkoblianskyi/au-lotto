@@ -15,7 +15,7 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center">
               <div className="bg-white/10 rounded-lg p-2 mr-2">
-                <Image src="/images/oz-lotto-logo.png" alt="OZ Lotto" width={80} height={40} className="h-6 w-auto" />
+                <Image src="/images/oz-lotto-logo.png" alt="OZ Lotto" width={180} height={90} className="h-6 w-auto" />
               </div>
             </h3>
             <p className="text-white/90 text-sm">
