@@ -41,7 +41,7 @@ export function Header() {
               className="text-blue-900 hover:text-blue-700 transition-colors font-semibold"
               onClick={scrollToTop}
             >
-              All Lotteries
+              Oz Lotto
             </Link>
             <Link
               href="/about"
