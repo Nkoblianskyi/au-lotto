@@ -69,7 +69,7 @@ export default function AboutPage() {
                   scrollToTop()
                   router.push("/lotteries")
                 }}
-                className="border-3 border-white/70 text-white hover:bg-white hover:text-purple-900 font-bold px-12 py-6 text-xl rounded-2xl backdrop-blur-sm"
+                className="border-3 border-white/70 text-green-600 hover:bg-white hover:text-purple-900 font-bold px-12 py-6 text-xl rounded-2xl backdrop-blur-sm"
               >
                 🎮 EXPLORE GAMES
               </Button>
