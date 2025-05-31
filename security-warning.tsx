@@ -2,7 +2,7 @@ import { ShieldX } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function SecurityWarning() {
-  const siteName = "ozbigwinau.com"
+  const siteName = "ozbigchance.com"
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-4">

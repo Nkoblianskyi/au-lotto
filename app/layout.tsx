@@ -8,8 +8,8 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "OZ Lotto - Australia's Ultimate Jackpot Adventure",
-  description: "Join thousands of winners and start your lottery journey today with OZ Lotto",
+  title: "OZ Big Chance - Australia's Ultimate Jackpot Adventure",
+  description: "Join thousands of winners and start your lottery journey today with OZ Big Chance",
 }
 
 export default function RootLayout({

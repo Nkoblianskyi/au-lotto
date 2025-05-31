@@ -58,7 +58,9 @@ export default function CookiesPage() {
 
                 <section>
                   <h2 className="text-2xl font-semibold text-gray-900 mb-3">Contact Us</h2>
-                  <p>If you have any questions about our use of cookies, please contact us at cookies@ozbigwinau.com</p>
+                  <p>
+                    If you have any questions about our use of cookies, please contact us at cookies@ozbigchance.com
+                  </p>
                 </section>
               </div>
             </CardContent>

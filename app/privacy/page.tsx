@@ -54,7 +54,7 @@ export default function PrivacyPage() {
                 <section>
                   <h2 className="text-2xl font-semibold text-gray-900 mb-3">Contact Us</h2>
                   <p>
-                    If you have any questions about this Privacy Policy, please contact us at privacy@ozbigwinau.com
+                    If you have any questions about this Privacy Policy, please contact us at privacy@ozbigchance.com
                   </p>
                 </section>
               </div>

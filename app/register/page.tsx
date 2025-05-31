@@ -360,7 +360,7 @@ export default function RegisterPage() {
                   <Label htmlFor="terms" className="text-sm text-gray-700 leading-relaxed">
                     I agree with the{" "}
                     <Link href="/privacy" className="text-blue-900 hover:text-blue-700 font-semibold">
-                      politicians ozbigwinaustralia.com
+                      privacy policy ozbigchance.com
                     </Link>{" "}
                     and data processing for my inquiry
                   </Label>
