@@ -73,7 +73,7 @@ export default function HomePage() {
                       scrollToTop()
                       router.push("/lotteries")
                     }}
-                    className="border-3 border-white/70 text-white hover:bg-white hover:text-teal-900 font-bold px-10 py-6 text-xl rounded-2xl backdrop-blur-sm"
+                    className="border-3 border-white/70 text-green-900 hover:bg-white hover:text-teal-900 font-bold px-10 py-6 text-xl rounded-2xl backdrop-blur-sm"
                   >
                     🎮 EXPLORE GAMES
                   </Button>
@@ -420,7 +420,7 @@ export default function HomePage() {
                   scrollToTop()
                   router.push("/login")
                 }}
-                className="border-4 border-white text-white hover:bg-white hover:text-red-600 font-bold px-16 py-8 text-2xl rounded-2xl"
+                className="border-4 border-white text-black hover:bg-white hover:text-red-600 font-bold px-16 py-8 text-2xl rounded-2xl"
               >
                 🔐 MEMBER LOGIN
               </Button>
