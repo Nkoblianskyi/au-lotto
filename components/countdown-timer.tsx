@@ -1,0 +1,104 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { Card } from "@/components/ui/card"
+import Image from "next/image"
+
+interface TimeLeft {
+  days: number
+  hours: number
+  minutes: number
+  seconds: number
+}
+
+export function CountdownTimer() {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+  const [drawNumber, setDrawNumber] = useState(30891)
+  const [drawDate, setDrawDate] = useState("")
+
+  useEffect(() => {
+    const getNextTuesday = () => {
+      const now = new Date()
+      const nextTuesday = new Date()
+      const daysUntilTuesday = (2 - now.getDay() + 7) % 7 || 7 // Tuesday is day 2
+      nextTuesday.setDate(now.getDate() + daysUntilTuesday)
+      nextTuesday.setHours(20, 30, 0, 0) // 8:30 PM draw time
+      return nextTuesday
+    }
+
+    const updateCountdown = () => {
+      const now = new Date()
+      const nextDraw = getNextTuesday()
+
+      if (now > nextDraw) {
+        nextDraw.setDate(nextDraw.getDate() + 7)
+        setDrawNumber((prev) => prev + 1)
+      }
+
+      const difference = nextDraw.getTime() - now.getTime()
+
+      setDrawDate(
+        nextDraw.toLocaleDateString("en-AU", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }),
+      )
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        })
+      }
+    }
+
+    updateCountdown()
+    const timer = setInterval(updateCountdown, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <Card className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-2.5 px-8 rounded-2xl shadow-2xl border-2 border-white/20 hover:scale-105 transition-transform duration-300 animate-float min-w-[400px]">
+      <div className="text-center space-y-4">
+        <div className="flex items-center justify-center gap-3 text-white">
+          <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+          <div className="flex items-center gap-2">
+            <div className="bg-white/20 rounded-lg p-1">
+              <Image src="/images/oz-lotto-logo.png" alt="OZ Lotto" width={60} height={30} className="h-6 w-auto" />
+            </div>
+            <span className="text-xl font-bold animate-pulse">NEXT DRAW</span>
+          </div>
+          <div className="w-2 h-2 bg-white rounded-full animate-ping animation-delay-500"></div>
+        </div>
+
+        <div className="grid grid-cols-4 gap-4">
+          {[
+            { label: "Days", value: timeLeft.days.toString().padStart(2, "0") },
+            { label: "Hours", value: timeLeft.hours.toString().padStart(2, "0") },
+            { label: "Minutes", value: timeLeft.minutes.toString().padStart(2, "0") },
+            { label: "Seconds", value: timeLeft.seconds.toString().padStart(2, "0") },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-white text-blue-900 rounded-xl p-3 border-2 border-amber-200 hover:scale-110 transition-transform duration-200 animate-bounce-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="text-3xl font-bold animate-number-flip">{item.value}</div>
+              <div className="text-xs text-amber-600 font-semibold">{item.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="space-y-1 animate-fade-in-up animation-delay-400">
+          <div className="text-white font-bold animate-pulse-glow">DRAW #{drawNumber}</div>
+          <div className="text-sm text-white/90">({drawDate})</div>
+        </div>
+      </div>
+    </Card>
+  )
+}
