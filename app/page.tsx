@@ -374,8 +374,9 @@ export default function LotteriesPage() {
               {weeklyStats.map((day, index) => (
                 <Card
                   key={index}
-                  className={`text-center hover:shadow-lg transition-all duration-300 hover:scale-105 ${day.day === "Tuesday" ? "ring-2 ring-blue-500 bg-blue-50" : ""
-                    }`}
+                  className={`text-center hover:shadow-lg transition-all duration-300 hover:scale-105 ${
+                    day.day === "Tuesday" ? "ring-2 ring-blue-500 bg-blue-50" : ""
+                  }`}
                 >
                   <CardContent className="p-6">
                     <h3 className={`font-bold mb-3 ${day.day === "Tuesday" ? "text-blue-900" : "text-gray-900"}`}>
@@ -384,14 +385,15 @@ export default function LotteriesPage() {
                     <div className="space-y-2">
                       <div className="text-sm text-gray-600">{day.sales}</div>
                       <div
-                        className={`text-xs px-2 py-1 rounded-full ${day.activity === "Maximum"
+                        className={`text-xs px-2 py-1 rounded-full ${
+                          day.activity === "Maximum"
                             ? "bg-red-100 text-red-800"
                             : day.activity === "High"
                               ? "bg-orange-100 text-orange-800"
                               : day.activity === "Medium"
                                 ? "bg-yellow-100 text-yellow-800"
                                 : "bg-gray-100 text-gray-800"
-                          }`}
+                        }`}
                       >
                         {day.activity}
                       </div>
