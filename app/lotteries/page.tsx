@@ -142,7 +142,7 @@ export default function GamesPage() {
                                     scrollToTop()
                                     router.push("/about")
                                 }}
-                                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold px-8 py-4 text-lg rounded-lg"
+                                className="border-2 border-white text-green-600 hover:bg-white hover:text-blue-900 font-bold px-8 py-4 text-lg rounded-lg"
                             >
                                 Learn More
                             </Button>
