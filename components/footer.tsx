@@ -144,7 +144,7 @@ export function Footer() {
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/80">
           <p>
-            &copy; 2025 OZ Lotto Australia. All rights reserved. Licensed and regulated by Australian gaming
+            &copy; 2025 Ozbigchance. All rights reserved. Licensed and regulated by Australian gaming
             authorities.
           </p>
         </div>
